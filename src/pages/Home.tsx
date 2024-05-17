@@ -1,3 +1,4 @@
+import { DemoPage } from '@/components/tasks/page';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { IOrder } from '@/entities/IOrder';
 import { OrdersService } from '@/services/OrdersService';
@@ -14,7 +15,7 @@ export function Home() {
     OrdersService.getOrders()
       .then(setOrders)
       .catch(() => {
-        toast.error('Erro ao carregar os pedidos!');
+        toast.error('Erro ao carregar as tarefas!');
       })
       .finally(() => {
         setIsLoading(false);
@@ -25,6 +26,8 @@ export function Home() {
     <div className="min-h-screen flex flex-col max-w-[800px] ml-5 pb-52 justify-center items-start">
       <h1 className="text-3xl font-semibold">Bem-vindo(a)! Tenha um dia produtivo. ☕</h1>
       <h2 className="text-muted-foreground">Suas tarefas:</h2>
+
+      <DemoPage />
 
       <div className="h-10 w-full mt-10 grid grid-cols-3 gap-4">
         {isLoading && (
