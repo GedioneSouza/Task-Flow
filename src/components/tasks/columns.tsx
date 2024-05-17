@@ -1,4 +1,9 @@
 import { ColumnDef } from "@tanstack/react-table"
+import { Button } from "../ui/Button"
+import { ArrowUpDown } from "lucide-react"
+import { Checkbox } from "@/components/ui/checkbox"
+import { DataTableColumnHeader } from "../ui/DataTableColumnHeader"
+
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -24,39 +29,79 @@ export type Todo = {
 
 export const columns: ColumnDef<Todo>[] = [
   {
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
     accessorKey: "data_criacao",
-    header: "Data criação",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Data Criação" />
+    ),
   },
   {
     accessorKey: "data_edicao",
-    header: "Data Edição",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Data Edição" />
+    ),
   },
   {
     accessorKey: "prazo",
-    header: "Prazo",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Prazo" />
+    ),
   },
   {
     accessorKey: "titulo",
-    header: "Título",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Título" />
+    ),
   },
   {
     accessorKey: "descricao",
-    header: "Descrição",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Descrição" />
+    ),
   },
   {
     accessorKey: "equipe",
-    header: "Equipe",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Equipe" />
+    ),
   },
   {
     accessorKey: "autor",
-    header: "Autor",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Autor" />
+    ),
   },
   {
     accessorKey: "prioridade",
-    header: "Prioridade",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Prioridade" />
+    ),
   },
   {
-    accessorKey: "prazo",
-    header: "Prazo",
+    accessorKey: "status",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Status" />
+    ),
   },
 ]
