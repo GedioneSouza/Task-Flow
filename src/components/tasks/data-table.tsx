@@ -30,6 +30,7 @@ import React from "react"
 import { Input } from "../ui/Input"
 import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from "../ui/DropdownMenu"
 import { ScrollArea, ScrollBar } from "../ui/scroll-area"
+import { DialogDemo } from "../ui/DialogTask"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -72,43 +73,18 @@ export function DataTable<TData, TValue>({
   return (
     <ScrollArea className="sm:w-[800px] md:w-[1200px] lg:w-[1200px]">
     <div>
-      <div className="flex items-center py-4">
-        <Input
-          placeholder="Filtrar por título..."
-          value={(table.getColumn("titulo")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("titulo")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Colunas
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter(
-                (column) => column.getCanHide()
-              )
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                )
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+      <div className="flex items-center py-4 ">
+        <div className="flex-grow">
+          <Input
+            placeholder="Filtrar por título..."
+            value={(table.getColumn("titulo")?.getFilterValue() as string) ?? ""}
+            onChange={(event) =>
+              table.getColumn("titulo")?.setFilterValue(event.target.value)
+            }
+            className="max-w-sm"
+          />
+        </div>
+        <DialogDemo />
       </div>
       <div className="rounded-md border">
         <Table>
@@ -155,6 +131,36 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
+
+      <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" className="mr-auto">
+              Colunas
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start" >
+            {table
+              .getAllColumns()
+              .filter(
+                (column) => column.getCanHide()
+              )
+              .map((column) => {
+                return (
+                  <DropdownMenuCheckboxItem
+                    key={column.id}
+                    className="capitalize"
+                    checked={column.getIsVisible()}
+                    onCheckedChange={(value) =>
+                      column.toggleVisibility(!!value)
+                    }
+                  >
+                    {column.id}
+                  </DropdownMenuCheckboxItem>
+                )
+              })}
+          </DropdownMenuContent>
+        </DropdownMenu>
+        
         <Button
           variant="outline"
           size="sm"
