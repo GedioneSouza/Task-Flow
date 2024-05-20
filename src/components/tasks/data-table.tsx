@@ -31,6 +31,7 @@ import { Input } from "../ui/Input"
 import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from "../ui/DropdownMenu"
 import { ScrollArea, ScrollBar } from "../ui/scroll-area"
 import { DialogDemo } from "../ui/DialogTask"
+import { format, parseISO } from "date-fns"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -178,6 +179,7 @@ export function DataTable<TData, TValue>({
           Próximo
         </Button>
       </div>
+      <p>{format(parseISO('2024-05-13T20:17:09.459835+00:00	'), 'dd/MM/yyyy HH:mm:ss')}</p>
     </div>
     <ScrollBar orientation="horizontal" />
     </ScrollArea>
