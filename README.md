@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 
-Link do site funcionando [aqui](https://task-flow-indol.vercel.app/tasks)
+Link do site funcionando [aqui](https://task-flow-indol.vercel.app/)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
