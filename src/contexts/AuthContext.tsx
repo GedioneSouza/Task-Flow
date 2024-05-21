@@ -1,6 +1,7 @@
-import { storageKeys } from '@/config/storageKeys';
-import { AuthService } from '@/services/AuthService';
+
 import { createContext, useCallback, useState } from 'react';
+import { AuthService } from '../services/AuthService';
+import { storageKeys } from '../config/storageKeys';
 
 interface IAuthContextValue {
   signedIn: boolean;

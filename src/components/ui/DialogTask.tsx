@@ -1,11 +1,4 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+
 import { Input } from "./Input"
 import { useControllerTask } from "./validationForm/useControllerTask"
 import { FormProvider } from "react-hook-form"
@@ -16,27 +9,17 @@ import { CalendarIcon } from "@radix-ui/react-icons"
 import { format } from "date-fns"
 import { ptBR } from "date-fns/locale";
 
-import { cn } from "@/lib/utils"
-import { Calendar } from "@/components/ui/calendar"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
 
-import { Button } from "./Button"
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+
 
 
 import { AlertCircle, ArrowDownCircle, ArrowUpCircle } from "lucide-react"
+import { Button } from "./button"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./dialog"
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "./select"
+import { Popover, PopoverContent, PopoverTrigger } from "./popover"
+import { cn } from "../../lib/utils"
+import { Calendar } from "./calendar"
 
 export function DialogDemo() {
   const {

@@ -1,7 +1,7 @@
-import { queryClient } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import { TODOS_QUERY_KEY } from "./useTodos";
 import { toast } from "sonner";
+import { queryClient } from "../lib/queryClient";
 
 export function useCreateTask() {
 
@@ -16,11 +16,11 @@ export function useCreateTask() {
   
         return response.json();
       },
-      onSuccess: async (data, _variables, context) => {
+      onSuccess: async (_data, _variables, _context) => {
         await queryClient.cancelQueries({ queryKey: TODOS_QUERY_KEY });
         toast.success('Tarefa criada com sucesso!')
       },
-      onError: async (_error, _variables, context) => {
+      onError: async (_error, _variables, _context) => {
         await queryClient.cancelQueries({ queryKey: TODOS_QUERY_KEY });
         toast.success('Tarefa criada com sucesso!')
         

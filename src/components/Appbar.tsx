@@ -1,9 +1,5 @@
-import { LogOutIcon } from 'lucide-react';
 
-import { useAuth } from '@/hooks/useAuth';
 import { ThemeSwitcher } from './ThemeSwitcher';
-import { Button } from './ui/Button';
-import { Tooltip } from './ui/Tooltip';
 
 export function Appbar() {
 

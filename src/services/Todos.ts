@@ -1,4 +1,4 @@
-import { ITodos } from '@/entities/ITodos';
+import { ITodos } from '../entities/ITodos';
 import { httpClient } from './httpClient';
 
 export class TodosService {

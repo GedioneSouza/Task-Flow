@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { ITodos } from '@/entities/ITodos';
-import { TodosService } from '@/services/Todos';
-import { WithStatus } from '@/types/utils';
+import { WithStatus } from '../types/utils';
+import { ITodos } from '../entities/ITodos';
+import { TodosService } from '../services/Todos';
+
 
 export const TODOS_QUERY_KEY = ['todos'];
 

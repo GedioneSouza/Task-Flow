@@ -1,7 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table"
-import { Checkbox } from "@/components/ui/checkbox"
 import { DataTableColumnHeader } from "../ui/DataTableColumnHeader"
 import { format, parseISO } from "date-fns"
+import { Checkbox } from "../ui/checkbox"
 
 
 

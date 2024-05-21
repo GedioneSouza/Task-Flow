@@ -1,5 +1,5 @@
 
-import { useUsers } from "@/hooks/useTodos"
+import { useUsers } from "../../hooks/useTodos"
 import { columns } from "./columns"
 import { DataTable } from "./data-table"
 

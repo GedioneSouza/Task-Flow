@@ -1,7 +1,8 @@
-import { DemoPage } from '@/components/tasks/page';
-import { IOrder } from '@/entities/IOrder';
-import { OrdersService } from '@/services/OrdersService';
+
 import { useEffect, useState } from 'react';
+import { DemoPage } from '../components/tasks/page';
+import { OrdersService } from '../services/OrdersService';
+import { IOrder } from '../entities/IOrder';
 
 export function Home() {
   const [orders, setOrders] = useState<IOrder[]>([]);

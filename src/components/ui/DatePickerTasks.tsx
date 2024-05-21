@@ -3,22 +3,14 @@ import { CalendarIcon } from "@radix-ui/react-icons"
 import { addDays, format } from "date-fns"
 import { ptBR } from "date-fns/locale";
 
-import { cn } from "@/lib/utils"
-import { Calendar } from "@/components/ui/calendar"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+import { cn } from "../../lib/utils"
+import { Popover, PopoverContent, PopoverTrigger } from "./popover";
+import { Button } from "./button";
+import { Calendar } from "./calendar";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select";
 
-import { Button } from "./Button"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+
+
 
 export function DatePickerTasks() {
   const [date, setDate] = React.useState<Date>()

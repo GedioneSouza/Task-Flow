@@ -1,8 +1,10 @@
-import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
-import { Label } from '@/components/ui/label';
-import { useAuth } from '@/hooks/useAuth';
+
 import { useForm } from 'react-hook-form';
+import { Input } from '../components/ui/Input';
+import { useAuth } from '../hooks/useAuth';
+import { Label } from '../components/ui/label';
+import { Button } from '../components/ui/button';
+
 
 interface IFormData {
   email: string;

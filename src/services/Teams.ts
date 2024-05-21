@@ -1,4 +1,4 @@
-import { ITeams } from '@/entities/ITeams';
+import { ITeams } from '../entities/ITeams';
 import { httpClient } from './httpClient';
 
 export class TeamsService {

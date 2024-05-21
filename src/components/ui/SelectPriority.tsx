@@ -6,10 +6,9 @@ import {
     SelectLabel,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select"
+} from "./select"
 
 import { ArrowUpCircle, AlertCircle, ArrowDownCircle } from 'lucide-react'
-import { FormControl } from "./form"
 
 export function SelectPriority() {
     return (

@@ -1,4 +1,4 @@
-import { IUsers } from '@/entities/IUser';
+import { IUsers } from '../entities/IUser';
 import { httpClient } from './httpClient';
 
 export class TodosService {

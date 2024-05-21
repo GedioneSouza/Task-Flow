@@ -1,4 +1,4 @@
-import { IOrder } from '@/entities/IOrder';
+import { IOrder } from '../entities/IOrder';
 import { httpClient } from './httpClient';
 
 export class OrdersService {

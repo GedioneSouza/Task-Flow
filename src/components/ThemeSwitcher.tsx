@@ -1,13 +1,13 @@
-import { useTheme } from '@/contexts/ThemeContext';
 import { Moon, Sun } from 'lucide-react';
 
-import { Button } from './ui/Button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from './ui/DropdownMenu';
+import { Button } from './ui/button';
+import { useTheme } from '../contexts/ThemeContext';
 
 export function ThemeSwitcher() {
   const { setTheme } = useTheme();

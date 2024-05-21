@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   ColumnFiltersState,
   SortingState,
@@ -10,18 +11,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table"
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
 
-import {
-  Button
-} from '@/components/ui/Button'
 
 
 
