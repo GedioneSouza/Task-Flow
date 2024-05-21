@@ -2,20 +2,18 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "./Input"
-import { SelectPriority } from "./SelectPriority"
 import { useControllerTask } from "./validationForm/useControllerTask"
 import { FormProvider } from "react-hook-form"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "./form"
 
 
 import { CalendarIcon } from "@radix-ui/react-icons"
-import { addDays, format } from "date-fns"
+import { format } from "date-fns"
 import { ptBR } from "date-fns/locale";
 
 import { cn } from "@/lib/utils"

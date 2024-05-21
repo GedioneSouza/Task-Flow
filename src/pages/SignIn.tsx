@@ -3,7 +3,6 @@ import { Input } from '@/components/ui/Input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/hooks/useAuth';
 import { useForm } from 'react-hook-form';
-import { toast } from 'sonner';
 
 interface IFormData {
   email: string;

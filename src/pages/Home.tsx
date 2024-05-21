@@ -1,9 +1,7 @@
 import { DemoPage } from '@/components/tasks/page';
-import { Skeleton } from '@/components/ui/Skeleton';
 import { IOrder } from '@/entities/IOrder';
 import { OrdersService } from '@/services/OrdersService';
 import { useEffect, useState } from 'react';
-import { toast } from 'sonner';
 
 export function Home() {
   const [orders, setOrders] = useState<IOrder[]>([]);

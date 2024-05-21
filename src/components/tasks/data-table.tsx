@@ -1,5 +1,4 @@
 import {
-  ColumnDef,
   ColumnFiltersState,
   SortingState,
   VisibilityState,
@@ -31,10 +30,9 @@ import { Input } from "../ui/Input"
 import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from "../ui/DropdownMenu"
 import { ScrollArea, ScrollBar } from "../ui/scroll-area"
 import { DialogDemo } from "../ui/DialogTask"
-import { format, parseISO } from "date-fns"
 
 interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[]
+  columns: any
   data: TData[]
 }
 

@@ -1,7 +1,6 @@
 import { storageKeys } from '@/config/storageKeys';
 import { AuthService } from '@/services/AuthService';
-import { httpClient } from '@/services/httpClient';
-import { createContext, useCallback, useLayoutEffect, useState } from 'react';
+import { createContext, useCallback, useState } from 'react';
 
 interface IAuthContextValue {
   signedIn: boolean;
