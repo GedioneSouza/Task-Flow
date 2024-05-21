@@ -1,13 +1,13 @@
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
-import { Label } from '@/components/ui/Label';
+import { Label } from '@/components/ui/label';
 import { useAuth } from '@/hooks/useAuth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 
 interface IFormData {
   email: string;
-  password: string;
+  senha: string;
 }
 
 export function SignIn() {
@@ -16,16 +16,13 @@ export function SignIn() {
   const form = useForm<IFormData>({
     defaultValues: {
       email: '',
-      password: '',
+      senha: '',
     },
   });
 
-  const handleSubmit = form.handleSubmit(async ({ email, password }) => {
-    try {
-      await signIn(email, password);
-    } catch {
-      toast.error('Credenciais inválidas!');
-    }
+  const handleSubmit = form.handleSubmit(async ({ email, senha }) => {
+      await signIn(email, senha);
+
   });
 
   return (
@@ -39,8 +36,8 @@ export function SignIn() {
         </div>
 
         <div className="space-y-1">
-          <Label htmlFor="password">Senha</Label>
-          <Input id="password" type="password" {...form.register('password')} />
+          <Label htmlFor="senha">Senha</Label>
+          <Input id="senha" type="senha" {...form.register('senha')} />
         </div>
 
         <Button className="mt-3" disabled={form.formState.isSubmitting}>

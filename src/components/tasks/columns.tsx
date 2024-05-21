@@ -20,7 +20,7 @@ import { toZonedTime } from 'date-fns-tz';
 export type Todo = {
   id: string
   data_criacao: string
-  data_edicao?: string
+  data_edicao: string
   prazo: string
   titulo: string
   descricao: string
@@ -59,21 +59,38 @@ export const columns: ColumnDef<Todo>[] = [
       <DataTableColumnHeader column={column} title="Data Criação" />
     ),
     cell: ({ row }) => {
-      const dataParseada = parseISO(row.original.data_criacao);
-      return format(dataParseada, 'dd/MM/yyyy HH:mm:ss');
+      if (row.original.data_criacao !== '') {
+        const dataParseada = parseISO(row.original.data_criacao);
+        return format(dataParseada, 'dd/MM/yyyy HH:mm:ss')
+      }
+      return '-'
     },
   },  
   {
     accessorKey: "data_edicao",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Data Edição" />
-    )
+    ),
+    cell: ({ row }) => {
+      if (row.original.data_edicao != null) {
+        const dataParseada = parseISO(row.original.data_edicao);
+        return format(dataParseada, 'dd/MM/yyyy HH:mm:ss')
+      }
+      return '-'
+    },
   },
   {
     accessorKey: "prazo",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Prazo" />
-    )
+    ),
+    cell: ({ row }) => {
+      if (row.original.prazo !== '') {
+        const dataParseada = parseISO(row.original.prazo);
+        return format(dataParseada, 'dd/MM/yyyy HH:mm:ss')
+      }
+      return '-'
+    },
   },
   {
     accessorKey: "titulo",
@@ -85,18 +102,6 @@ export const columns: ColumnDef<Todo>[] = [
     accessorKey: "descricao",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Descrição" />
-    ),
-  },
-  {
-    accessorKey: "equipe",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Equipe" />
-    ),
-  },
-  {
-    accessorKey: "autor",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Autor" />
     ),
   },
   {

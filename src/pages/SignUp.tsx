@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 interface IFormData {
   name: string;
   email: string;
-  password: string;
+  senha: string;
 }
 
 export function SignUp() {
@@ -17,12 +17,12 @@ export function SignUp() {
     defaultValues: {
       name: '',
       email: '',
-      password: '',
+      senha: '',
     },
   });
 
-  const handleSubmit = form.handleSubmit(async ({ name, email, password }) => {
-    const response = await AuthService.signUp({ name, email, password });
+  const handleSubmit = form.handleSubmit(async ({ name, email, senha }) => {
+    const response = await AuthService.signUp({ name, email, senha });
 
     console.log(response);
   });
@@ -43,11 +43,11 @@ export function SignUp() {
         </div>
 
         <div className="space-y-1">
-          <Label htmlFor="password">Senha</Label>
-          <Input id="password" type="password" {...form.register('password')} />
+          <Label htmlFor="senha">Senha</Label>
+          <Input id="senha" type="password" {...form.register('senha')} />
         </div>
 
-        <Button className="mt-3">Entrar</Button>
+        <Button className="mt-3">Criar conta</Button>
       </form>
     </div>
   );

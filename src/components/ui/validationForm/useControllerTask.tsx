@@ -1,3 +1,4 @@
+import { useCreateTask } from "@/hooks/useCreateTask";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
 import { useForm } from "react-hook-form";
@@ -28,14 +29,16 @@ export function useControllerTask() {
         resolver: zodResolver(FormSchema),
       })
 
+      const { createUser } = useCreateTask();
+
+
     function onSubmit(data: z.infer<typeof FormSchema>) {
-        toast.success('Opa')
-        alert(`
-            Título: ${data.titulo}
-            Descrição: ${data.descricao}
-            Prazo: ${format(data.prazo, "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")}
-            Prioridade: ${data.prioridade}
-        `)
+        createUser({
+            titulo: data.titulo,
+            descricao: data.descricao,
+            prazo: data.prazo,
+            prioridade: data.prioridade
+        })
     }
 
     return {

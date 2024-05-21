@@ -179,7 +179,6 @@ export function DataTable<TData, TValue>({
           Próximo
         </Button>
       </div>
-      <p>{format(parseISO('2024-05-13T20:17:09.459835+00:00	'), 'dd/MM/yyyy HH:mm:ss')}</p>
     </div>
     <ScrollBar orientation="horizontal" />
     </ScrollArea>

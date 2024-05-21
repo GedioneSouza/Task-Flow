@@ -6,11 +6,11 @@ export function AuthGuard({ isPrivate }: { isPrivate: boolean }) {
   const { signedIn } = useAuth();
 
   if (signedIn && !isPrivate) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/tasks" replace />;
   }
 
   if (!signedIn && isPrivate) {
-    return <Navigate to="/sign-in" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return <Outlet />;

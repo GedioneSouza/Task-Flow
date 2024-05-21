@@ -8,8 +8,8 @@ export const TODOS_QUERY_KEY = ['todos'];
 export type UsersQueryData = WithStatus<ITodos>;
 
 export function useUsers() {
-  const { data, isLoading } = useQuery({
-    staleTime: Infinity,
+  const { data, isLoading, refetch } = useQuery({
+    staleTime: 5000,
     queryKey: TODOS_QUERY_KEY,
     queryFn: async () => {
       const todos = await TodosService.getTodos();
@@ -20,5 +20,6 @@ export function useUsers() {
   return {
     users: data ?? [],
     isLoading,
+    refetch
   };
 }

@@ -174,7 +174,7 @@ export function DialogDemo() {
                       defaultValue={field.value}
                     >
                       <SelectTrigger className="w-[278px]">
-                        <SelectValue placeholder="Selecionar uma fruta" />
+                        <SelectValue placeholder="Selecionar a prioridade" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>

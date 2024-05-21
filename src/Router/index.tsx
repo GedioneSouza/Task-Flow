@@ -8,12 +8,12 @@ import { AuthGuard } from './AuthGuard';
 export function Router() {
   return (
     <Routes>
-      <Route element={<AuthGuard isPrivate={false} />}>
+      <Route element={<AuthGuard isPrivate />}>
         <Route path="/tasks" element={<Home />} />
       </Route>
 
       <Route element={<AuthGuard isPrivate={false} />}>
-        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
       </Route>
     </Routes>
