@@ -32,7 +32,7 @@ import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMe
 import { ScrollArea, ScrollBar } from "../ui/scroll-area"
 import { DialogDemo } from "../ui/DialogTask"
 
-interface DataTableProps<TData, TValue> {
+interface DataTableProps<TData, _TValue> {
   columns: any
   data: TData[]
 }
