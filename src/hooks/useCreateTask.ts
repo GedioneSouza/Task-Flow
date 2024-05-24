@@ -17,11 +17,11 @@ export function useCreateTask() {
         return response.json();
       },
       onSuccess: async (_data, _variables, _context) => {
-        await queryClient.cancelQueries({ queryKey: TODOS_QUERY_KEY });
+        await queryClient.cancelQueries({ queryKey:  ['todos'] });
         toast.success('Tarefa criada com sucesso!')
       },
       onError: async (_error, _variables, _context) => {
-        await queryClient.cancelQueries({ queryKey: TODOS_QUERY_KEY });
+        await queryClient.cancelQueries({ queryKey:  ['todos'] });
         toast.success('Tarefa criada com sucesso!')
         
       },

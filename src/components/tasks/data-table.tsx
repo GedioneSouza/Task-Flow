@@ -31,6 +31,7 @@ import { Input } from "../ui/Input"
 import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from "../ui/DropdownMenu"
 import { ScrollArea, ScrollBar } from "../ui/scroll-area"
 import { DialogDemo } from "../ui/DialogTask"
+import { TaskService } from "../../services/TaskService"
 
 interface DataTableProps<TData, _TValue> {
   columns: any
@@ -111,9 +112,9 @@ export function DataTable<TData, TValue>({
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
+                  data-state={row.getIsSelected() && "selected" && TaskService.deleteTask(row.original.id).finally(() => row.toggleSelected(false))}
                 >
-                  {row.getVisibleCells().map((cell) => (
+                  {row.getVisibleCells().map((cell: any) => (
                     <TableCell key={cell.id}>
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>

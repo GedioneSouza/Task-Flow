@@ -2,6 +2,8 @@ import { ColumnDef } from "@tanstack/react-table"
 import { DataTableColumnHeader } from "../ui/DataTableColumnHeader"
 import { format, parseISO } from "date-fns"
 import { Checkbox } from "../ui/checkbox"
+import { AlertCircle, ArrowDownCircle } from "lucide-react"
+import { useDeleteTask } from "../../hooks/useDeleteTask"
 
 
 
@@ -27,6 +29,8 @@ export type Todo = {
   status: number
 }
 
+
+
 export const columns: ColumnDef<Todo>[] = [
   {
     id: "select",
@@ -43,7 +47,9 @@ export const columns: ColumnDef<Todo>[] = [
     cell: ({ row }) => (
       <Checkbox
         checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        onCheckedChange={(value) => {
+          row.toggleSelected(!!value)
+        }}
         aria-label="Select row"
       />
     ),
@@ -62,7 +68,7 @@ export const columns: ColumnDef<Todo>[] = [
       }
       return '-'
     },
-  },  
+  },
   {
     accessorKey: "data_edicao",
     header: ({ column }) => (
@@ -106,6 +112,36 @@ export const columns: ColumnDef<Todo>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Prioridade" />
     ),
+    cell: ({ row }) => {
+      if (row.original.prioridade === 1) {
+        return (
+          <div className="flex flex-row items-center gap-1.5">
+            <ArrowDownCircle className="text-green-500" />
+            BAIXA
+          </div>
+        )
+      }
+
+      else if (row.original.prioridade === 2) {
+        return (
+          <div className="flex flex-row items-center gap-1.5">
+            <AlertCircle className="text-yellow-400" />
+            MÉDIA
+          </div>
+        )
+      }
+
+      else if (row.original.prioridade === 3) {
+        return (
+          <div className="flex flex-row items-center gap-1.5">
+            <ArrowDownCircle className="text-green-500" />
+            BAIXA
+          </div>
+        )
+      }
+
+      return '-'
+    },
   },
   {
     accessorKey: "status",

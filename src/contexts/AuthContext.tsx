@@ -19,8 +19,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       senha,
     });
 
-    console.log('testeeeee', accessToken)
-
     setSignedIn(true);
     localStorage.setItem(storageKeys.accessToken, accessToken);
   }, []);

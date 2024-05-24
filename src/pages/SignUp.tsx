@@ -12,7 +12,6 @@ interface IFormData {
 }
 
 export function SignUp() {
-  console.log('SignUp renderizou');
 
   const form = useForm<IFormData>({
     defaultValues: {
@@ -23,9 +22,8 @@ export function SignUp() {
   });
 
   const handleSubmit = form.handleSubmit(async ({ name, email, senha }) => {
-    const response = await AuthService.signUp({ name, email, senha });
+    await AuthService.signUp({ name, email, senha });
 
-    console.log(response);
   });
 
   return (
