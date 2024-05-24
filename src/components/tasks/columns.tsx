@@ -3,8 +3,6 @@ import { DataTableColumnHeader } from "../ui/DataTableColumnHeader"
 import { format, parseISO } from "date-fns"
 import { Checkbox } from "../ui/checkbox"
 import { AlertCircle, ArrowDownCircle } from "lucide-react"
-import { useDeleteTask } from "../../hooks/useDeleteTask"
-
 
 
 // This type is used to define the shape of our data.
